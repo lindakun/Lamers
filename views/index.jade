@@ -1,0 +1,614 @@
+!!! 5
+html(lang='zh')
+  head
+    meta(charset='utf-8')
+    title Lamers(Do What You Want)!
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.')
+    meta(name='author', content='Muhammad Usman')
+    // The styles
+    link#bs-css(href='css/bootstrap-cerulean.css', rel='stylesheet')
+    style(type='text/css')
+      body {
+      padding-bottom: 40px;
+      }
+      .sidebar-nav {
+      padding: 9px 0;
+      }
+    link(href='css/bootstrap-responsive.css', rel='stylesheet')
+    link(href='css/charisma-app.css', rel='stylesheet')
+    link(href='css/jquery-ui-1.8.21.custom.css', rel='stylesheet')
+    link(href='css/fullcalendar.css', rel='stylesheet')
+    link(href='css/fullcalendar.print.css', rel='stylesheet', media='print')
+    link(href='css/chosen.css', rel='stylesheet')
+    link(href='css/uniform.default.css', rel='stylesheet')
+    link(href='css/colorbox.css', rel='stylesheet')
+    link(href='css/jquery.cleditor.css', rel='stylesheet')
+    link(href='css/jquery.noty.css', rel='stylesheet')
+    link(href='css/noty_theme_default.css', rel='stylesheet')
+    link(href='css/elfinder.min.css', rel='stylesheet')
+    link(href='css/elfinder.theme.css', rel='stylesheet')
+    link(href='css/jquery.iphone.toggle.css', rel='stylesheet')
+    link(href='css/opa-icons.css', rel='stylesheet')
+    link(href='css/uploadify.css', rel='stylesheet')
+    // The HTML5 shim, for IE6-8 support of HTML5 elements
+    //if lt IE 9
+      script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+    // The fav icon
+    link(rel='shortcut icon', href='img/favicon.ico')
+  body
+    // topbar starts
+    .navbar
+      .navbar-inner
+        .container-fluid
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.top-nav.nav-collapse,.sidebar-nav.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='index.html')
+            img(alt='Charisma Logo', src='img/logo20.png')
+            span Charisma
+          // theme selector starts
+          .btn-group.pull-right.theme-container
+            a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
+              i.icon-tint
+              span.hidden-phone  Change Theme / Skin
+              span.caret
+            ul#themes.dropdown-menu
+              li
+                a(data-value='classic', href='#')
+                  i.icon-blank
+                  | Classic
+              li
+                a(data-value='cerulean', href='#')
+                  i.icon-blank
+                  | Cerulean
+              li
+                a(data-value='cyborg', href='#')
+                  i.icon-blank
+                  | Cyborg
+              li
+                a(data-value='redy', href='#')
+                  i.icon-blank
+                  | Redy
+              li
+                a(data-value='journal', href='#')
+                  i.icon-blank
+                  | Journal
+              li
+                a(data-value='simplex', href='#')
+                  i.icon-blank
+                  | Simplex
+              li
+                a(data-value='slate', href='#')
+                  i.icon-blank
+                  | Slate
+              li
+                a(data-value='spacelab', href='#')
+                  i.icon-blank
+                  | Spacelab
+              li
+                a(data-value='united', href='#')
+                  i.icon-blank
+                  | United
+          // theme selector ends
+          // user dropdown starts
+          .btn-group.pull-right
+            a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
+              i.icon-user
+              span.hidden-phone  admin
+              span.caret
+            ul.dropdown-menu
+              li
+                a(href='#') Profile
+              li.divider
+              li
+                a(href='login.html') Logout
+          // user dropdown ends
+          .top-nav.nav-collapse
+            ul.nav
+              li
+                a(href='#') Visit Site
+              li
+                form.navbar-search.pull-left
+                  input.search-query.span2(placeholder='Search', name='query', type='text')
+    .container-fluid
+      .row-fluid
+        // left menu starts
+        .span2.main-menu-span
+          .well.nav-collapse.sidebar-nav
+            ul.nav.nav-tabs.nav-stacked.main-menu
+              li.nav-header.hidden-tablet Main
+              li
+                a.ajax-link(href='index.html')
+                  i.icon-home
+                  span.hidden-tablet  Dashboard
+              li
+                a.ajax-link(href='ui.html')
+                  i.icon-eye-open
+                  span.hidden-tablet  UI Features
+              li
+                a.ajax-link(href='form.html')
+                  i.icon-edit
+                  span.hidden-tablet  Forms
+              li
+                a.ajax-link(href='chart.html')
+                  i.icon-list-alt
+                  span.hidden-tablet  Charts
+              li
+                a.ajax-link(href='typography.html')
+                  i.icon-font
+                  span.hidden-tablet  Typography
+              li
+                a.ajax-link(href='gallery.html')
+                  i.icon-picture
+                  span.hidden-tablet  Gallery
+              li.nav-header.hidden-tablet Sample Section
+              li
+                a.ajax-link(href='table.html')
+                  i.icon-align-justify
+                  span.hidden-tablet  Tables
+              li
+                a.ajax-link(href='calendar.html')
+                  i.icon-calendar
+                  span.hidden-tablet  Calendar
+              li
+                a.ajax-link(href='grid.html')
+                  i.icon-th
+                  span.hidden-tablet  Grid
+              li
+                a.ajax-link(href='file-manager.html')
+                  i.icon-folder-open
+                  span.hidden-tablet  File Manager
+              li
+                a(href='tour.html')
+                  i.icon-globe
+                  span.hidden-tablet  Tour
+              li
+                a.ajax-link(href='icon.html')
+                  i.icon-star
+                  span.hidden-tablet  Icons
+              li
+                a(href='error.html')
+                  i.icon-ban-circle
+                  span.hidden-tablet  Error Page
+              li
+                a(href='login.html')
+                  i.icon-lock
+                  span.hidden-tablet  Login Page
+            label#for-is-ajax.hidden-tablet(for='is-ajax')
+              input#is-ajax(type='checkbox')
+              | Ajax on menu
+        noscript
+          .alert.alert-block.span10
+            h4.alert-heading Warning!
+            p
+              | You need to have
+              a(href='http://en.wikipedia.org/wiki/JavaScript', target='_blank') JavaScript
+              | enabled to use this site.
+        #content.span10
+          // content starts
+          div
+            ul.breadcrumb
+              li
+                a(href='#') Home
+                span.divider /
+              li
+                a(href='#') Dashboard
+          .sortable.row-fluid
+            a.well.span3.top-block(data-rel='tooltip', title='6 new members.', href='#')
+              span.icon32.icon-red.icon-user
+              div Total Members
+              div 507
+              span.notification 6
+            a.well.span3.top-block(data-rel='tooltip', title='4 new pro members.', href='#')
+              span.icon32.icon-color.icon-star-on
+              div Pro Members
+              div 228
+              span.notification.green 4
+            a.well.span3.top-block(data-rel='tooltip', title='$34 new sales.', href='#')
+              span.icon32.icon-color.icon-cart
+              div Sales
+              div $13320
+              span.notification.yellow $34
+            a.well.span3.top-block(data-rel='tooltip', title='12 new messages.', href='#')
+              span.icon32.icon-color.icon-envelope-closed
+              div Messages
+              div 25
+              span.notification.red 12
+          .row-fluid
+            .box.span12
+              .box-header.well
+                h2
+                  i.icon-info-sign
+                  | Introduction
+                .box-icon
+                  a.btn.btn-setting.btn-round(href='#')
+                    i.icon-cog
+                  a.btn.btn-minimize.btn-round(href='#')
+                    i.icon-chevron-up
+                  a.btn.btn-close.btn-round(href='#')
+                    i.icon-remove
+              .box-content
+                h1
+                  | Charisma
+                  small free, premium quality, responsive, multiple skin admin template.
+                p
+                  | Its a live demo of the template. I have created Charisma to ease the repeat work I have to do on my projects. Now I re-use Charisma as a base for my admin panel work and I am sharing it with you :)
+                p
+                  b
+                    | All pages in the menu are functional, take a look at all, please share this with your followers.
+                p.center
+                  a.btn.btn-large.btn-primary(href='http://usman.it/free-responsive-admin-template')
+                    i.icon-chevron-left.icon-white
+                    | Back to article
+                  a.btn.btn-large(href='http://usman.it/free-responsive-admin-template')
+                    i.icon-download-alt
+                    | Download Page
+                .clearfix
+          .row-fluid.sortable
+            .box.span4
+              .box-header.well
+                h2
+                  i.icon-th
+                  | Tabs
+                .box-icon
+                  a.btn.btn-setting.btn-round(href='#')
+                    i.icon-cog
+                  a.btn.btn-minimize.btn-round(href='#')
+                    i.icon-chevron-up
+                  a.btn.btn-close.btn-round(href='#')
+                    i.icon-remove
+              .box-content
+                ul#myTab.nav.nav-tabs
+                  li.active
+                    a(href='#info') Info
+                  li
+                    a(href='#custom') Custom
+                  li
+                    a(href='#messages') Messages
+                #myTabContent.tab-content
+                  #info.tab-pane.active
+                    h3
+                      | Charisma
+                      small a fully featued template
+                    p
+                      | Its a fully featured, responsive template for your admin panel. Its optimized for tablet and mobile phones. Scan the QR code below to view it in your mobile device.
+                    img.charisma_qr.center(alt='QR Code', src='img/qrcode136.png')
+                  #custom.tab-pane
+                    h3
+                      | Custom
+                      small small text
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor.
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Donec consectetur, velit a pharetra ultricies, diam lorem lacinia risus, ac commodo orci erat eu massa. Sed sit amet nulla ipsum. Donec felis mauris, vulputate sed tempor at, aliquam a ligula. Pellentesque non pulvinar nisi.
+                  #messages.tab-pane
+                    h3
+                      | Messages
+                      small small text
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Donec consectetur, velit a pharetra ultricies, diam lorem lacinia risus, ac commodo orci erat eu massa. Sed sit amet nulla ipsum. Donec felis mauris, vulputate sed tempor at, aliquam a ligula. Pellentesque non pulvinar nisi.
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor.
+            // /span
+            .box.span4
+              .box-header.well(data-original-title='data-original-title')
+                h2
+                  i.icon-user
+                  | Member Activity
+                .box-icon
+                  a.btn.btn-minimize.btn-round(href='#')
+                    i.icon-chevron-up
+                  a.btn.btn-close.btn-round(href='#')
+                    i.icon-remove
+              .box-content
+                .box-content
+                  ul.dashboard-list
+                    li
+                      a(href='#')
+                        img.dashboard-avatar(alt='Usman', src='http://www.gravatar.com/avatar/f0ea51fa1e4fae92608d8affee12f67b.png?s=50')
+                      strong Name:
+                      a(href='#')
+                        | Usman
+                      br
+                      strong Since:
+                      | 17/05/2012
+                      br
+                      strong Status:
+                      span.label.label-success Approved
+                    li
+                      a(href='#')
+                        img.dashboard-avatar(alt='Sheikh Heera', src='http://www.gravatar.com/avatar/3232415a0380253cfffe19163d04acab.png?s=50')
+                      strong Name:
+                      a(href='#')
+                        | Sheikh Heera
+                      br
+                      strong Since:
+                      | 17/05/2012
+                      br
+                      strong Status:
+                      span.label.label-warning Pending
+                    li
+                      a(href='#')
+                        img.dashboard-avatar(alt='Abdullah', src='http://www.gravatar.com/avatar/46056f772bde7c536e2086004e300a04.png?s=50')
+                      strong Name:
+                      a(href='#')
+                        | Abdullah
+                      br
+                      strong Since:
+                      | 25/05/2012
+                      br
+                      strong Status:
+                      span.label.label-important Banned
+                    li
+                      a(href='#')
+                        img.dashboard-avatar(alt='Saruar Ahmed', src='http://www.gravatar.com/avatar/564e1bb274c074dc4f6823af229d9dbb.png?s=50')
+                      strong Name:
+                      a(href='#')
+                        | Saruar Ahmed
+                      br
+                      strong Since:
+                      | 17/05/2012
+                      br
+                      strong Status:
+                      span.label.label-info Updates
+            // /span
+            .box.span4
+              .box-header.well(data-original-title='data-original-title')
+                h2
+                  i.icon-list-alt
+                  | Realtime Traffic
+                .box-icon
+                  a.btn.btn-minimize.btn-round(href='#')
+                    i.icon-chevron-up
+                  a.btn.btn-close.btn-round(href='#')
+                    i.icon-remove
+              .box-content
+                #realtimechart(style='height: 190px;')
+                p.clearfix
+                  | You can update a chart periodically to get a real-time effect by using a timer to insert the new data in the plot and redraw it.
+                p
+                  | Time between updates:
+                  input#updateInterval(type='text', value='', style='text-align: right; width: 5em;')
+                  | milliseconds
+            // /span
+          // /row
+          .row-fluid.sortable
+            .box.span4
+              .box-header.well(data-original-title='data-original-title')
+                h2
+                  i.icon-list
+                  | Buttons
+                .box-icon
+                  a.btn.btn-setting.btn-round(href='#')
+                    i.icon-cog
+                  a.btn.btn-minimize.btn-round(href='#')
+                    i.icon-chevron-up
+                  a.btn.btn-close.btn-round(href='#')
+                    i.icon-remove
+              .box-content.buttons
+                p.btn-group
+                  button.btn Left
+                  button.btn Middle
+                  button.btn Right
+                p
+                  button.btn.btn-small
+                    i.icon-star
+                    | Icon button
+                  button.btn.btn-small.btn-primary Small button
+                  button.btn.btn-small.btn-danger Small button
+                p
+                  button.btn.btn-small.btn-warning Small button
+                  button.btn.btn-small.btn-success Small button
+                  button.btn.btn-small.btn-info Small button
+                p
+                  button.btn.btn-small.btn-inverse Small button
+                  button.btn.btn-large.btn-primary.btn-round Round button
+                  button.btn.btn-large.btn-round
+                    i.icon-ok
+                  button.btn.btn-primary
+                    i.icon-edit.icon-white
+                p
+                  button.btn.btn-mini Mini button
+                  button.btn.btn-mini.btn-primary Mini button
+                  button.btn.btn-mini.btn-danger Mini button
+                  button.btn.btn-mini.btn-warning Mini button
+                p
+                  button.btn.btn-mini.btn-info Mini button
+                  button.btn.btn-mini.btn-success Mini button
+                  button.btn.btn-mini.btn-inverse Mini button
+            // /span
+            .box.span4
+              .box-header.well(data-original-title='data-original-title')
+                h2
+                  i.icon-list
+                  | Buttons
+                .box-icon
+                  a.btn.btn-setting.btn-round(href='#')
+                    i.icon-cog
+                  a.btn.btn-minimize.btn-round(href='#')
+                    i.icon-chevron-up
+                  a.btn.btn-close.btn-round(href='#')
+                    i.icon-remove
+              .box-content.buttons
+                p
+                  button.btn.btn-large Large button
+                  button.btn.btn-large.btn-primary Large button
+                p
+                  button.btn.btn-large.btn-danger Large button
+                  button.btn.btn-large.btn-warning Large button
+                p
+                  button.btn.btn-large.btn-success Large button
+                  button.btn.btn-large.btn-info Large button
+                p
+                  button.btn.btn-large.btn-inverse Large button
+                .btn-group
+                  button.btn.btn-large Large Dropdown
+                  button.btn.btn-large.dropdown-toggle(data-toggle='dropdown')
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#')
+                        i.icon-star
+                        | Action
+                    li
+                      a(href='#')
+                        i.icon-tag
+                        | Another action
+                    li
+                      a(href='#')
+                        i.icon-download-alt
+                        | Something else here
+                    li.divider
+                    li
+                      a(href='#')
+                        i.icon-tint
+                        | Separated link
+            // /span
+            .box.span4
+              .box-header.well(data-original-title='data-original-title')
+                h2
+                  i.icon-list
+                  | Weekly Stat
+                .box-icon
+                  a.btn.btn-setting.btn-round(href='#')
+                    i.icon-cog
+                  a.btn.btn-minimize.btn-round(href='#')
+                    i.icon-chevron-up
+                  a.btn.btn-close.btn-round(href='#')
+                    i.icon-remove
+              .box-content
+                ul.dashboard-list
+                  li
+                    a(href='#')
+                      i.icon-arrow-up
+                      span.green 92
+                      | New Comments
+                  li
+                    a(href='#')
+                      i.icon-arrow-down
+                      span.red 15
+                      | New Registrations
+                  li
+                    a(href='#')
+                      i.icon-minus
+                      span.blue 36
+                      | New Articles
+                  li
+                    a(href='#')
+                      i.icon-comment
+                      span.yellow 45
+                      | User reviews
+                  li
+                    a(href='#')
+                      i.icon-arrow-up
+                      span.green 112
+                      | New Comments
+                  li
+                    a(href='#')
+                      i.icon-arrow-down
+                      span.red 31
+                      | New Registrations
+                  li
+                    a(href='#')
+                      i.icon-minus
+                      span.blue 93
+                      | New Articles
+                  li
+                    a(href='#')
+                      i.icon-comment
+                      span.yellow 254
+                      | User reviews
+            // /span
+          // /row
+          // content ends
+        // /#content.span10
+      // /fluid-row
+      hr
+      #myModal.modal.hide.fade
+        .modal-header
+          button.close(type='button', data-dismiss='modal') ×
+          h3 Settings
+        .modal-body
+          p Here settings can be configured...
+        .modal-footer
+          a.btn(href='#', data-dismiss='modal') Close
+          a.btn.btn-primary(href='#') Save changes
+      footer
+        p.pull-left
+          | ©
+          a(href='http://usman.it', target='_blank') Muhammad Usman
+          | 2012
+        p.pull-right
+          | Powered by:
+          a(href='http://usman.it/free-responsive-admin-template') Charisma
+
+    // external javascript
+    // jQuery
+    script(src='js/jquery-1.7.2.min.js')
+    // jQuery UI
+    script(src='js/jquery-ui-1.8.21.custom.min.js')
+    // transition / effect library
+    script(src='js/bootstrap-transition.js')
+    // alert enhancer library
+    script(src='js/bootstrap-alert.js')
+    // modal / dialog library
+    script(src='js/bootstrap-modal.js')
+    // custom dropdown library
+    script(src='js/bootstrap-dropdown.js')
+    // scrolspy library
+    script(src='js/bootstrap-scrollspy.js')
+    // library for creating tabs
+    script(src='js/bootstrap-tab.js')
+    // library for advanced tooltip
+    script(src='js/bootstrap-tooltip.js')
+    // popover effect library
+    script(src='js/bootstrap-popover.js')
+    // button enhancer library
+    script(src='js/bootstrap-button.js')
+    // accordion library (optional, not used in demo)
+    script(src='js/bootstrap-collapse.js')
+    // carousel slideshow library (optional, not used in demo)
+    script(src='js/bootstrap-carousel.js')
+    // autocomplete library
+    script(src='js/bootstrap-typeahead.js')
+    // tour library
+    script(src='js/bootstrap-tour.js')
+    // library for cookie management
+    script(src='js/jquery.cookie.js')
+    // calander plugin
+    script(src='js/fullcalendar.min.js')
+    // data table plugin
+    script(src='js/jquery.dataTables.min.js')
+    // chart libraries start
+    script(src='js/excanvas.js')
+    script(src='js/jquery.flot.min.js')
+    script(src='js/jquery.flot.pie.min.js')
+    script(src='js/jquery.flot.stack.js')
+    script(src='js/jquery.flot.resize.min.js')
+    // chart libraries end
+    // select or dropdown enhancer
+    script(src='js/jquery.chosen.min.js')
+    // checkbox, radio, and file input styler
+    script(src='js/jquery.uniform.min.js')
+    // plugin for gallery image view
+    script(src='js/jquery.colorbox.min.js')
+    // rich text editor library
+    script(src='js/jquery.cleditor.min.js')
+    // notification plugin
+    script(src='js/jquery.noty.js')
+    // file manager library
+    script(src='js/jquery.elfinder.min.js')
+    // star rating plugin
+    script(src='js/jquery.raty.min.js')
+    // for iOS style toggle switch
+    script(src='js/jquery.iphone.toggle.js')
+    // autogrowing textarea plugin
+    script(src='js/jquery.autogrow-textarea.js')
+    // multiple file upload plugin
+    script(src='js/jquery.uploadify-3.1.min.js')
+    // history.js for cross-browser state change on ajax
+    script(src='js/jquery.history.js')
+    // application script for Charisma demo
+    script(src='js/charisma.js')
