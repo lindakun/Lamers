@@ -4,7 +4,7 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
+  , index = require('./routes/index')
   , user = require('./routes/user')
   , login = require('./routes/login')
   , http = require('http')
@@ -17,6 +17,7 @@ app.configure(function () {
   app.set('port', config.site.port || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', config.site.viewEngine || 'jade');
+  app.set('view options', { layout: false });
   //app.set("view engine", "html");
   //app.register("html", ejs);
   app.set("view cache", true); //上线开启模板缓存
@@ -33,7 +34,8 @@ app.configure('development', function(){
 });
 
 //配置服务的请求拦截路径
-app.get('/', routes.index);
+app.get('/', index.index);
+app.get('/form', index.form);
 
 app.get('/login', login.toLogin);
 app.post('/loginAction', login.login);

@@ -12,14 +12,16 @@ module.exports = {
     databaseName:'mydb',
     //autoReconnect: automatically reconnect if connection is lost
     autoReconnect:true,
+    logCount: 1,
+    backUp: 1,
+    //10 Seconds
+    timeOut:10000,
     //poolSize: size of connection pool (number of connections to use)
     poolSize:4,
     //set admin to true if you want to turn on admin features
     //if admin is true, the auth list below will be ignored
     //if admin is true, you will need to enter an admin username/password below (if it is needed)
     admin:false,
-
-
     // >>>>  If you are using regular accounts, fill out auth details in the section below
     // >>>>  If you have admin auth, leave this section empty and skip to the next section
     auth:[
@@ -34,8 +36,6 @@ module.exports = {
       }
 
     ],
-
-
     //  >>>>  If you are using an admin mongodb account, or no admin account exists, fill out section below
     //  >>>>  Using an admin account allows you to view and edit all databases, and view stats
 

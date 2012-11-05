@@ -5,27 +5,9 @@
  * Time: 下午9:08
  * To change this template use File | Settings | File Templates.
  */
-var mongo = require('mongodb'),
-  config = require('../config');
-
-var Server = mongo.Server,
-  Db = mongo.Db,
-  BSON = mongo.BSONPure;
-
-var server = new Server(config.mongodb.host, config.mongodb.port, {auto_reconnect:true, poolSize:config.mongodb.poolSize});
-var db = new Db(config.mongodb.databaseName, server, {safe:true});
-
+var ds = require('./datasource');
 var this_col = 'user';
-db.open(function (err, db) {
-  if (!err) {
-    console.log("Connected to '" + config.mongodb.databaseName + "' database");
-    db.collection(this_col, {safe:true}, function (err, collection) {
-      if (err) {
-        console.log("The " + this_col + " collection doesn't exist.");
-      }
-    });
-  }
-});
+var db = ds.dataSouce();
 
 exports.toLogin = function (req, res) {
   res.render('login',{err:null});
