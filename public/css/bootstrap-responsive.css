@@ -319,6 +319,10 @@
   .row-fluid [class*="span"]:first-child {
     margin-left: 0;
   }
+  .row-fluid .register {
+      width: 60%;
+      *width: 60%;
+  }
   .row-fluid .span12 {
     width: 99.999999993%;
     *width: 99.9468085036383%;

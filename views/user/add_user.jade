@@ -22,16 +22,16 @@ html(lang='zh')
                 a(href='#') 主页
                 span.divider /
               li
-                a(href='#') 表单
+                a(href='#') 用户注册
           .row-fluid.sortable
-            .box.span12
+            .box.register
               .box-header.well(data-original-title='data-original-title')
                 h2
                   i.icon-edit
                   | 用户注册
                 .box-icon
-                  a.btn.btn-setting.btn-round(href='#')
-                    i.icon-cog
+                  //a.btn.btn-setting.btn-round(href='#')
+                  //i.icon-cog
                   a.btn.btn-minimize.btn-round(href='#')
                     i.icon-chevron-up
                   a.btn.btn-close.btn-round(href='#')
@@ -41,21 +41,24 @@ html(lang='zh')
                   fieldset
                     legend 请填写用户信息
                     .control-group
-                      label.control-label 用户名：
+                      label#register.control-label <dfn>*</dfn>用户名：
                       .controls
-                        input#Input(name='username',type='text', value='')
+                        input#username(name='username', type='text', value='')
                     .control-group
-                      label.control-label 密码：
+                      label#register.control-label(style='margin-left: 10px;') <dfn>*</dfn>密码：
                       .controls
-                        input#Input(name='password',type='password', value='')
+                        input#password(name='password', type='password', value='')
+                    .control-group.warning
+                      label#register.control-label(for='inputWarning', style='margin-left: -16px;') <dfn>*</dfn>确认密码：
+                      .controls
+                        input#rpassword(name='rpassword', type='password', value='')
                     .control-group
-                      label.control-label(for='inputWarning') 确认密码：
+                      label#register.control-label(style='margin-left: 10px;') <dfn>*</dfn>邮箱：
                       .controls
-                        input#inputWarning(name='rpassword',type='password', value='')
-                        span.help-inline 请保持密码一致.
-                    .form-actions
+                        input#username(name='username', type='text', value='')
+                    #register.form-actions
                       button.btn.btn-primary(type='submit') 保存
-                      button.btn(type='reset') 取消
+                      button.btn(type='reset', style='margin-left: 5px;') 取消
       hr
       #myModal.modal.hide.fade
         .modal-header
