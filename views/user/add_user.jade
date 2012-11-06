@@ -28,7 +28,7 @@ html(lang='zh')
               .box-header.well(data-original-title='data-original-title')
                 h2
                   i.icon-edit
-                  | 添加用户
+                  | 用户注册
                 .box-icon
                   a.btn.btn-setting.btn-round(href='#')
                     i.icon-cog
@@ -37,26 +37,22 @@ html(lang='zh')
                   a.btn.btn-close.btn-round(href='#')
                     i.icon-remove
               .box-content
-                form.form-horizontal
+                form.form-horizontal(action='registerAction', method='post')
                   fieldset
-                    legend 在下面添加用户属性
+                    legend 请填写用户信息
                     .control-group
-                      label.control-label(for='typeahead') 自动完成框
+                      label.control-label 用户名：
                       .controls
-                        input#typeahead.span6.typeahead(type='text', data-provide='typeahead', data-items='4', data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]')
-                        p.help-block 开始输入后会提示自动输入!
+                        input#Input(name='username',type='text', value='')
                     .control-group
-                      label.control-label(for='date01') 日期输入
+                      label.control-label 密码：
                       .controls
-                        input#date01.input-xlarge.datepicker(type='text', value='02/16/12')
+                        input#Input(name='password',type='password', value='')
                     .control-group
-                      label.control-label(for='fileInput') 文件输入
+                      label.control-label(for='inputWarning') 确认密码：
                       .controls
-                        input#fileInput.input-file.uniform_on(type='file')
-                    .control-group
-                      label.control-label(for='textarea2') 文本区域
-                      .controls
-                        textarea#textarea2.cleditor(rows='3')
+                        input#inputWarning(name='rpassword',type='password', value='')
+                        span.help-inline 请保持密码一致.
                     .form-actions
                       button.btn.btn-primary(type='submit') 保存
                       button.btn(type='reset') 取消

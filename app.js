@@ -35,10 +35,12 @@ app.configure('development', function(){
 
 //配置服务的请求拦截路径
 app.get('/', index.index);
+app.get('/index', index.index);
 app.get('/form', index.form);
 
 app.get('/login', login.toLogin);
 app.post('/loginAction', login.login);
+app.post('/registerAction', login.register);
 
 app.get('/users', user.list);
 app.get('/users/show', user.show);
